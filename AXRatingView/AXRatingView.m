@@ -87,7 +87,7 @@
 #pragma clang diagnostic pop
     }
     
-    UIGraphicsBeginImageContextWithOptions(size, NO, 2.0);
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
     [[UIColor blackColor] set];
     if ([_markCharacter respondsToSelector:@selector(drawAtPoint:withAttributes:)]) {
       [_markCharacter drawAtPoint:CGPointZero
@@ -105,15 +105,15 @@
   }
 }
 
-- (void)setStepInterval:(float)stepInterval
+- (void)setStepInterval:(CGFloat)stepInterval
 {
-  _stepInterval = MAX(stepInterval, 0.0);
+  _stepInterval = fmax(stepInterval, 0.0);
 }
 
-- (void)setValue:(float)value
+- (void)setValue:(CGFloat)value
 {
   if (_value != value) {
-    _value = MIN(MAX(value, 0.0), _numberOfStar);
+    _value = fmin(fmax(value, 0.0), _numberOfStar);
     [self setNeedsDisplay];
   }
 }
@@ -219,9 +219,9 @@
   CGPoint location = [[touches anyObject] locationInView:self];
   float value = location.x / (_markImage.size.width * _numberOfStar) * _numberOfStar;
   if (_stepInterval != 0.0) {
-    value = MAX(_minimumValue, ceilf(value / _stepInterval) * _stepInterval);
+    value = fmax(_minimumValue, ceilf(value / _stepInterval) * _stepInterval);
   } else {
-    value = MAX(_minimumValue, value);
+    value = fmax(_minimumValue, value);
   }
   [self setValue:value];
   [self sendActionsForControlEvents:UIControlEventValueChanged];
