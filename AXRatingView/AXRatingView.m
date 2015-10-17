@@ -5,226 +5,267 @@
 #import "AXRatingView.h"
 #import <QuartzCore/QuartzCore.h>
 
+NSString *const AXMarkerTypeKey = @"AXMarkerTypeKey";
+
+// AXMarkerTypeCharacter
+NSString *const AXMarkerHighlightCharacterKey = @"AXMarkerHighlightCharacterKey";
+NSString *const AXMarkerMaskCharacterKey = @"AXMarkerMaskCharacterKey";
+NSString *const AXMarkerCharacterFontKey = @"AXMarkerCharacterFontKey";
+
+// AXMarkerTypeImage
+NSString *const AXMarkerHighlightImageKey = @"AXMarkerHighlightImageKey";
+NSString *const AXMarkerMaskImageKey = @"AXMarkerMaskImageKey";
+
+NSString *const AXMarkerBaseColorKey = @"AXMarkerBaseColorKey";
+NSString *const AXMarkerHighlightColorKey = @"AXMarkerHighlightColorKey";
+
 @implementation AXRatingView
 
-- (void)axRatingViewInit {
-  _markCharacter = @"\u2605";
-  _markFont = [UIFont systemFontOfSize:22.0];
-  _baseColor = [UIColor darkGrayColor];
-  self.backgroundColor = _baseColor;
-  _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
-  _numberOfStar = 5;
-  _stepInterval = 0.0;
-  _minimumValue = 0.0;
+- (void)axRatingViewInit
+{
+    _numberOfStar = 5;
+    _stepInterval = 0.0;
+    _minimumValue = 0.0;
 }
 
 - (id)initWithFrame:(CGRect)frame
 {
-  if (self = [super initWithFrame:frame]) {
-    [self axRatingViewInit];
-  }
-  return self;
+    if (self = [super initWithFrame:frame]) {
+        [self axRatingViewInit];
+    }
+    return self;
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-  if (self = [super initWithCoder:decoder]) {
-    [self axRatingViewInit];
-  }
-  return self;
+    if (self = [super initWithCoder:decoder]) {
+        [self axRatingViewInit];
+    }
+    return self;
 }
 
 - (void)sizeToFit
 {
-  [super sizeToFit];
-  self.frame = (CGRect) {
-    self.frame.origin, self.intrinsicContentSize
-  };
+    [super sizeToFit];
+    self.frame = (CGRect){self.frame.origin, self.intrinsicContentSize};
 }
 
 - (CGSize)intrinsicContentSize
 {
-  return (CGSize){
-    self.markImage.size.width * _numberOfStar,
-    self.markImage.size.height
-  };
+    return (CGSize){self.maskImage.size.width * _numberOfStar, self.maskImage.size.height};
 }
 
 - (void)drawRect:(CGRect)rect
 {
-  if (!_starMaskLayer) {
-    _starMaskLayer = [self generateMaskLayer];
-    self.layer.mask = _starMaskLayer;
-    _highlightLayer = [self highlightLayer];
-    [self.layer addSublayer:_highlightLayer];
-  }
-  
-  CGFloat selfWidth = (self.markImage.size.width * _numberOfStar);
-  CGFloat selfHalfWidth = selfWidth / 2;
-  CGFloat selfHalfHeight = self.markImage.size.height / 2;
-  CGFloat offsetX = selfWidth / _numberOfStar * (_numberOfStar - _value);
-  [CATransaction begin];
-  [CATransaction setValue:(id)kCFBooleanTrue
-                   forKey:kCATransactionDisableActions];
-  _highlightLayer.position = (CGPoint){selfHalfWidth - offsetX, selfHalfHeight};
-  [CATransaction commit];
+    if (!_maskLayer) {
+        _maskLayer = [self maskLayer];
+        [self.layer addSublayer:_maskLayer];
+    }
+
+    if (!_highlightLayer) {
+        _highlightLayer = [self highlightLayer];
+        _highlightLayer.masksToBounds = YES;
+        [self.layer addSublayer:_highlightLayer];
+    }
+
+    CGFloat selfWidth = (self.highlightImage.size.width * _numberOfStar);
+    CGFloat selfHeight = (self.highlightImage.size.height);
+    [CATransaction begin];
+    [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
+    _highlightLayer.frame = (CGRect){CGPointZero, selfWidth * (_value / _numberOfStar), selfHeight};
+    [CATransaction commit];
 }
 
-#pragma mark - Property
+#pragma mark - Getters
 
-- (UIImage *)markImage
+- (NSString *)highlightCharacter
 {
-  if (_markImage) {
-    return _markImage;
-  } else {
-    CGSize size;
-    if ([_markCharacter respondsToSelector:@selector(sizeWithAttributes:)]) {
-      size = [_markCharacter sizeWithAttributes:@{NSFontAttributeName:_markFont}];
+    return self.markerDict[AXMarkerHighlightCharacterKey] ?: self.maskCharacter;
+}
+
+- (NSString *)maskCharacter
+{
+    return self.markerDict[AXMarkerMaskCharacterKey] ?: @"\u2605";
+}
+
+- (UIFont *)markerFont
+{
+    return self.markerDict[AXMarkerCharacterFontKey] ?: [UIFont systemFontOfSize:22.0];
+}
+
+- (UIColor *)baseColor
+{
+    return self.markerDict[AXMarkerBaseColorKey] ?: [UIColor darkGrayColor];
+}
+
+- (UIColor *)highlightColor
+{
+    return self.markerDict[AXMarkerHighlightColorKey] ?: [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
+}
+
+- (UIImage *)maskImage
+{
+    if (self.markerDict[AXMarkerMaskImageKey]) {
+        return self.markerDict[AXMarkerMaskImageKey];
+    } else if (_maskImage) {
+        return _maskImage;
     } else {
+        CGSize size;
+        if ([self.maskCharacter respondsToSelector:@selector(sizeWithAttributes:)]) {
+            size = [self.maskCharacter sizeWithAttributes:@{NSFontAttributeName : self.markerFont}];
+        } else {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-      size = [_markCharacter sizeWithFont:_markFont];
+            size = [self.maskCharacter sizeWithFont:self.markerFont];
 #pragma clang diagnostic pop
-    }
-    
-    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
-    [[UIColor blackColor] set];
-    if ([_markCharacter respondsToSelector:@selector(drawAtPoint:withAttributes:)]) {
-      [_markCharacter drawAtPoint:CGPointZero
-                   withAttributes:@{NSFontAttributeName: _markFont,
-                                    NSForegroundColorAttributeName: [UIColor blackColor]}];
-    } else {
+        }
+
+        UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+        [[UIColor clearColor] set];
+        if ([self.maskCharacter respondsToSelector:@selector(drawAtPoint:withAttributes:)]) {
+            [self.maskCharacter drawAtPoint:CGPointZero
+                             withAttributes:@{NSFontAttributeName : self.markerFont, NSForegroundColorAttributeName : self.baseColor}];
+        } else {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-      [_markCharacter drawAtPoint:CGPointZero withFont:_markFont];
+            [self.maskCharacter drawAtPoint:CGPointZero withFont:self.markerFont];
 #pragma clang diagnostic pop
+        }
+        UIImage *markImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return _maskImage = markImage;
     }
-    UIImage *markImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return _markImage = markImage;
-  }
+}
+
+- (UIImage *)highlightImage
+{
+    if (self.markerDict[AXMarkerHighlightImageKey]) {
+        return self.markerDict[AXMarkerHighlightImageKey];
+    } else if (self.markerDict[AXMarkerMaskImageKey]) {
+        return self.markerDict[AXMarkerMaskImageKey];
+    } else if (_highlightImage) {
+        return _highlightImage;
+    } else {
+        CGSize size;
+        if ([self.highlightCharacter respondsToSelector:@selector(sizeWithAttributes:)]) {
+            size = [self.highlightCharacter sizeWithAttributes:@{NSFontAttributeName : self.markerFont}];
+        } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+            size = [self.highlightCharacter sizeWithFont:self.markerFont];
+#pragma clang diagnostic pop
+        }
+
+        UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+        [[UIColor clearColor] set];
+        if ([self.highlightCharacter respondsToSelector:@selector(drawAtPoint:withAttributes:)]) {
+            [self.highlightCharacter drawAtPoint:CGPointZero
+                                  withAttributes:@{NSFontAttributeName : self.markerFont, NSForegroundColorAttributeName : self.highlightColor}];
+        } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+            [self.highlightCharacter drawAtPoint:CGPointZero withFont:self.markerFont];
+#pragma clang diagnostic pop
+        }
+        UIImage *markImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return _highlightImage = markImage;
+    }
+}
+
+#pragma mark - Setters
+
+- (void)setMarkerDict:(NSDictionary *)markerDict
+{
+    _markerDict = markerDict;
+    _highlightImage = nil;
+    _maskImage = nil;
+    _highlightLayer = nil;
+    _maskLayer = nil;
+    [self setNeedsDisplay];
 }
 
 - (void)setStepInterval:(CGFloat)stepInterval
 {
-  _stepInterval = fmax(stepInterval, 0.0);
+    _stepInterval = fmax(stepInterval, 0.0);
 }
 
 - (void)setValue:(CGFloat)value
 {
-  if (_value != value) {
-    _value = fmin(fmax(value, 0.0), _numberOfStar);
-    [self setNeedsDisplay];
-  }
-}
-
-- (void)setBaseColor:(UIColor *)baseColor
-{
-  if (_baseColor != baseColor) {
-    _baseColor = baseColor;
-    self.backgroundColor = _baseColor;
-    [self setNeedsDisplay];
-  }
-}
-
-- (void)setHighlightColor:(UIColor *)highlightColor
-{
-  if (_highlightColor != highlightColor) {
-    _highlightColor = highlightColor;
-    [_highlightLayer removeFromSuperlayer];
-    [_starMaskLayer removeFromSuperlayer];
-    _highlightLayer = nil;
-    _starMaskLayer = nil;
-    [self setNeedsDisplay];
-  }
-}
-
-- (void)setMarkFont:(UIFont *)markFont
-{
-  if (_markFont != markFont) {
-    _markFont = markFont;
-    _markImage = nil;
-    [self setNeedsDisplay];
-  }
-}
-
-- (void)setMarkCharacter:(NSString *)markCharacter
-{
-  if (_markCharacter != markCharacter) {
-    _markCharacter = markCharacter;
-    _markImage = nil;
-    [self setNeedsDisplay];
-  }
-}
-
-- (void)setNumberOfStar:(NSUInteger)numberOfStar
-{
-  if (_numberOfStar != numberOfStar) {
-    _numberOfStar = numberOfStar;
-    [self setNeedsDisplay];
-  }
-}
-
-- (void)setBackgroundColor:(UIColor *)backgroundColor
-{
-  if (self.backgroundColor != backgroundColor) {
-    if (_baseColor != self.backgroundColor) {
-      [super setBackgroundColor:backgroundColor];
+    if (_value != value) {
+        _value = fmin(fmax(value, 0.0), _numberOfStar);
+        [self setNeedsDisplay];
     }
-  }
 }
 
 #pragma mark - Operation
 
-- (CALayer *)generateMaskLayer
+- (CALayer *)maskLayer
 {
-  // Generate Mask Layer
-  _markImage = [self markImage];
-  CGFloat markWidth = _markImage.size.width;
-  CGFloat markHalfWidth = markWidth / 2;
-  CGFloat markHeight = _markImage.size.height;
-  CGFloat markHalfHeight = markHeight / 2;
-  
-  CALayer *starMaskLayer = [CALayer layer];
-  starMaskLayer.opaque = NO;
-  for (int i = 0; i < _numberOfStar; i++) {
-    CALayer *starLayer = [CALayer layer];
-    starLayer.contents = (id)_markImage.CGImage;
-    starLayer.bounds = (CGRect){CGPointZero, _markImage.size};
-    starLayer.position = (CGPoint){markHalfWidth + markWidth * i, markHalfHeight};
-    [starMaskLayer addSublayer:starLayer];
-  }
-  [starMaskLayer setFrame:(CGRect){CGPointZero, _markImage.size.width * _numberOfStar, _markImage.size.height}];
-  return starMaskLayer;
+    // Generate Mask Layer
+    _maskImage = [self maskImage];
+    CGFloat markWidth = _maskImage.size.width;
+    CGFloat markHalfWidth = markWidth / 2;
+    CGFloat markHeight = _maskImage.size.height;
+    CGFloat markHalfHeight = markHeight / 2;
+
+    CALayer *markerLayer = [CALayer layer];
+    markerLayer.opaque = NO;
+    for (int i = 0; i < _numberOfStar; i++) {
+        CALayer *starLayer = [CALayer layer];
+        starLayer.contents = (id)_maskImage.CGImage;
+        starLayer.bounds = (CGRect){CGPointZero, _maskImage.size};
+        starLayer.position = (CGPoint){markHalfWidth + markWidth * i, markHalfHeight};
+        [markerLayer addSublayer:starLayer];
+    }
+    markerLayer.backgroundColor = [UIColor clearColor].CGColor;
+    [markerLayer setFrame:(CGRect){CGPointZero, _maskImage.size.width * _numberOfStar, _maskImage.size.height}];
+    return markerLayer;
 }
 
 - (CALayer *)highlightLayer
 {
-  CALayer *highlightLayer = [CALayer layer];
-  highlightLayer.backgroundColor = _highlightColor.CGColor;
-  highlightLayer.bounds = (CGRect){CGPointZero, _markImage.size.width * _numberOfStar, _markImage.size.height};
-  highlightLayer.position = (CGPoint){CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)};
-  return highlightLayer;
+    // Generate Mask Layer
+    _highlightImage = [self highlightImage];
+    CGFloat markWidth = _highlightImage.size.width;
+    CGFloat markHalfWidth = markWidth / 2;
+    CGFloat markHeight = _highlightImage.size.height;
+    CGFloat markHalfHeight = markHeight / 2;
+
+    CALayer *markerLayer = [CALayer layer];
+    markerLayer.opaque = NO;
+    for (int i = 0; i < _numberOfStar; i++) {
+        CALayer *starLayer = [CALayer layer];
+        starLayer.contents = (id)_highlightImage.CGImage;
+        starLayer.bounds = (CGRect){CGPointZero, _highlightImage.size};
+        starLayer.position = (CGPoint){markHalfWidth + markWidth * i, markHalfHeight};
+        [markerLayer addSublayer:starLayer];
+    }
+    markerLayer.backgroundColor = [UIColor clearColor].CGColor;
+    [markerLayer setFrame:(CGRect){CGPointZero, _highlightImage.size.width * _numberOfStar, _highlightImage.size.height}];
+    return markerLayer;
 }
 
 #pragma mark - Event
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-  [self touchesMoved:touches withEvent:event];
+    if (self.userInteractionEnabled) {
+        [self touchesMoved:touches withEvent:event];
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-  CGPoint location = [[touches anyObject] locationInView:self];
-  float value = location.x / (_markImage.size.width * _numberOfStar) * _numberOfStar;
-  if (_stepInterval != 0.0) {
-    value = fmax(_minimumValue, ceilf(value / _stepInterval) * _stepInterval);
-  } else {
-    value = fmax(_minimumValue, value);
-  }
-  [self setValue:value];
-  [self sendActionsForControlEvents:UIControlEventValueChanged];
+    CGPoint location = [[touches anyObject] locationInView:self];
+    float value = location.x / (_maskImage.size.width * _numberOfStar) * _numberOfStar;
+    if (_stepInterval != 0.0) {
+        value = fmax(_minimumValue, ceilf(value / _stepInterval) * _stepInterval);
+    } else {
+        value = fmax(_minimumValue, value);
+    }
+    [self setValue:value];
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 @end
