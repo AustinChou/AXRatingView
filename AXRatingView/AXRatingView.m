@@ -26,6 +26,7 @@ NSString *const AXMarkerHighlightColorKey = @"AXMarkerHighlightColorKey";
     _numberOfStar = 5;
     _stepInterval = 0.0;
     _minimumValue = 0.0;
+    self.userInteractionEnabled = NO;
 }
 
 - (id)initWithFrame:(CGRect)frame
