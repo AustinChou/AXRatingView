@@ -33,6 +33,8 @@ IB_DESIGNABLE
 
 @property (nonatomic) IBInspectable NSUInteger numberOfStar;
 
+@property(nonatomic,getter=isContinuous) BOOL continuous; // if YES, value change events are sent any time the value changes during interaction. default = YES
+
 // Configuration Dictionary
 @property (copy, nonatomic) NSDictionary *markerDict;
 

@@ -23,9 +23,11 @@ NSString *const AXMarkerHighlightColorKey = @"AXMarkerHighlightColorKey";
 
 - (void)axRatingViewInit
 {
+    _continuous = YES;
     _numberOfStar = 5;
     _stepInterval = 0.0;
     _minimumValue = 0.0;
+    self.backgroundColor = [UIColor clearColor];
     self.userInteractionEnabled = NO;
 }
 
@@ -266,6 +268,13 @@ NSString *const AXMarkerHighlightColorKey = @"AXMarkerHighlightColorKey";
         value = fmax(_minimumValue, value);
     }
     [self setValue:value];
+    if (self.isContinuous) {
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
+    }
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
     [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 

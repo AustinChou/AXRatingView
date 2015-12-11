@@ -24,6 +24,8 @@
 		75BB207F180636FA00BE8680 /* AXRatingViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB207E180636FA00BE8680 /* AXRatingViewDemoTests.m */; };
 		75BB209018063AC200BE8680 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB208F18063AC200BE8680 /* QuartzCore.framework */; };
 		7E0B5BE8D3D64CC3B5C47A06 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24572433CE1545F8ACE868C3 /* libPods.a */; };
+		8F0B89D81C1A96E80048660D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F0B89D71C1A96E80048660D /* Launch Screen.storyboard */; };
+		8F0B89DC1C1A9C010048660D /* UIImage+AXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0B89DB1C1A9C010048660D /* UIImage+AXAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		039F45FC697448789A761AC2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		24572433CE1545F8ACE868C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		61074222E7BD0873889C183C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7593196319EFC2B600506F80 /* AXMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMenuViewController.h; sourceTree = "<group>"; };
 		7593196419EFC2B600506F80 /* AXMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXMenuViewController.m; sourceTree = "<group>"; };
 		7593196819EFC3E000506F80 /* AXOnTheCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXOnTheCellViewController.h; sourceTree = "<group>"; };
@@ -62,6 +64,10 @@
 		75BB207C180636FA00BE8680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		75BB207E180636FA00BE8680 /* AXRatingViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRatingViewDemoTests.m; sourceTree = "<group>"; };
 		75BB208F18063AC200BE8680 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8F0B89D71C1A96E80048660D /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8F0B89DA1C1A9C010048660D /* UIImage+AXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AXAdditions.h"; sourceTree = "<group>"; };
+		8F0B89DB1C1A9C010048660D /* UIImage+AXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AXAdditions.m"; sourceTree = "<group>"; };
+		DDF87AFA2E6A52A49732E848 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +130,7 @@
 				75BB2078180636FA00BE8680 /* AXRatingViewDemoTests */,
 				75BB2052180636FA00BE8680 /* Frameworks */,
 				75BB2051180636FA00BE8680 /* Products */,
-				039F45FC697448789A761AC2 /* Pods.xcconfig */,
+				8838846168ADCFC8E7CD7062 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +164,8 @@
 				7593196719EFC3C100506F80 /* OnTheCellViewController */,
 				75BB2062180636FA00BE8680 /* AXAppDelegate.h */,
 				75BB2063180636FA00BE8680 /* AXAppDelegate.m */,
+				8F0B89DA1C1A9C010048660D /* UIImage+AXAdditions.h */,
+				8F0B89DB1C1A9C010048660D /* UIImage+AXAdditions.m */,
 				75BB206B180636FA00BE8680 /* Images.xcassets */,
 				75BB205A180636FA00BE8680 /* Supporting Files */,
 			);
@@ -167,6 +175,7 @@
 		75BB205A180636FA00BE8680 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8F0B89D71C1A96E80048660D /* Launch Screen.storyboard */,
 				75BB205B180636FA00BE8680 /* AXRatingViewDemo-Info.plist */,
 				75BB205C180636FA00BE8680 /* InfoPlist.strings */,
 				75BB205F180636FA00BE8680 /* main.m */,
@@ -193,6 +202,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8838846168ADCFC8E7CD7062 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDF87AFA2E6A52A49732E848 /* Pods.debug.xcconfig */,
+				61074222E7BD0873889C183C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,6 +223,7 @@
 				75BB204D180636FA00BE8680 /* Frameworks */,
 				75BB204E180636FA00BE8680 /* Resources */,
 				4FA58AE8E7C94EAB8E4570C0 /* Copy Pods Resources */,
+				F51843F21A9DCD67C02F659A /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,7 +259,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AX;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = akiroom;
 				TargetAttributes = {
 					75BB2070180636FA00BE8680 = {
@@ -272,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0B89D81C1A96E80048660D /* Launch Screen.storyboard in Resources */,
 				75BB206C180636FA00BE8680 /* Images.xcassets in Resources */,
 				75BB205E180636FA00BE8680 /* InfoPlist.strings in Resources */,
 			);
@@ -315,7 +335,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F51843F21A9DCD67C02F659A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -325,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0B89DC1C1A9C010048660D /* UIImage+AXAdditions.m in Sources */,
 				75BB2060180636FA00BE8680 /* main.m in Sources */,
 				7593196A19EFC3E000506F80 /* AXOnTheCellViewController.m in Sources */,
 				75BB206A180636FA00BE8680 /* AXPropertiesViewController.m in Sources */,
@@ -375,7 +411,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -390,6 +425,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -414,7 +450,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -445,13 +480,14 @@
 		};
 		75BB2083180636FA00BE8680 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 039F45FC697448789A761AC2 /* Pods.xcconfig */;
+			baseConfigurationReference = DDF87AFA2E6A52A49732E848 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXRatingViewDemo/AXRatingViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "AXRatingViewDemo/AXRatingViewDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aladdincloud.AXRatingViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -459,13 +495,14 @@
 		};
 		75BB2084180636FA00BE8680 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 039F45FC697448789A761AC2 /* Pods.xcconfig */;
+			baseConfigurationReference = 61074222E7BD0873889C183C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXRatingViewDemo/AXRatingViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "AXRatingViewDemo/AXRatingViewDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aladdincloud.AXRatingViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -474,7 +511,6 @@
 		75BB2086180636FA00BE8680 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AXRatingViewDemo.app/AXRatingViewDemo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -488,6 +524,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "AXRatingViewDemoTests/AXRatingViewDemoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akiroom.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -497,7 +534,6 @@
 		75BB2087180636FA00BE8680 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AXRatingViewDemo.app/AXRatingViewDemo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -507,6 +543,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXRatingViewDemo/AXRatingViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "AXRatingViewDemoTests/AXRatingViewDemoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akiroom.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

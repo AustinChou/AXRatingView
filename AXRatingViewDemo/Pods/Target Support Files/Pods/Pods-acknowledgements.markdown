@@ -3,18 +3,6 @@ This application makes use of the following third party libraries:
 
 ## AXRatingView
 
-AXRatingView
-============
-
-Star mark rating view for a review scene.
-- analog star (like 4.23)
-- digital star (like 4.00)
-- inherihence from UIControl
-
-![screenshot](https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot.png)
-
-License
--------
 The MIT License (MIT)
 
 Copyright (c) 2013 Hiroki Akiyama (akiroom)
