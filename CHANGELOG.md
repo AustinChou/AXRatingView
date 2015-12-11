@@ -1,6 +1,11 @@
 CHANGELOG
 ---------
 
+## 1.0.4
+
+- Moved appearance configuration from properties to ```markerDict```.
+- Added ```continuous``` property.
+
 ## 1.0.3
 
 - Add ```minimumValue``` property. (#15)
