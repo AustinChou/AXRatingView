@@ -1,5 +1,5 @@
 PODS:
-  - EZRatingView (1.0.4)
+  - EZRatingView (2.0.0)
 
 DEPENDENCIES:
   - EZRatingView (from `..`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  EZRatingView: ed79a51bf40816966725449f8be9149d6ad23fa2
+  EZRatingView: 196d8acc72ba137b23f6b2bffe0ab7e74557e2cf
 
 PODFILE CHECKSUM: 78404b8a37b339010da25c380ad47460258ad90f
 
