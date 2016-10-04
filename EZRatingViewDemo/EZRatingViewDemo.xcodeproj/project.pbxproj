@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7593196519EFC2B600506F80 /* EZMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593196419EFC2B600506F80 /* EZMenuViewController.m */; };
+		7593196A19EFC3E000506F80 /* EZOnTheCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593196919EFC3E000506F80 /* EZOnTheCellViewController.m */; };
+		75BB2054180636FA00BE8680 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB2053180636FA00BE8680 /* Foundation.framework */; };
+		75BB2056180636FA00BE8680 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB2055180636FA00BE8680 /* CoreGraphics.framework */; };
+		75BB2058180636FA00BE8680 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB2057180636FA00BE8680 /* UIKit.framework */; };
+		75BB205E180636FA00BE8680 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75BB205C180636FA00BE8680 /* InfoPlist.strings */; };
+		75BB2060180636FA00BE8680 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB205F180636FA00BE8680 /* main.m */; };
+		75BB2064180636FA00BE8680 /* EZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB2063180636FA00BE8680 /* EZAppDelegate.m */; };
+		75BB206A180636FA00BE8680 /* EZPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB2069180636FA00BE8680 /* EZPropertiesViewController.m */; };
+		75BB206C180636FA00BE8680 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BB206B180636FA00BE8680 /* Images.xcassets */; };
+		75BB2073180636FA00BE8680 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB2072180636FA00BE8680 /* XCTest.framework */; };
+		75BB2074180636FA00BE8680 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB2053180636FA00BE8680 /* Foundation.framework */; };
+		75BB2075180636FA00BE8680 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB2057180636FA00BE8680 /* UIKit.framework */; };
+		75BB207D180636FA00BE8680 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75BB207B180636FA00BE8680 /* InfoPlist.strings */; };
+		75BB207F180636FA00BE8680 /* EZRatingViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB207E180636FA00BE8680 /* EZRatingViewDemoTests.m */; };
+		75BB209018063AC200BE8680 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB208F18063AC200BE8680 /* QuartzCore.framework */; };
+		8F0B89D81C1A96E80048660D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F0B89D71C1A96E80048660D /* Launch Screen.storyboard */; };
+		8F0B89DC1C1A9C010048660D /* UIImage+EZAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0B89DB1C1A9C010048660D /* UIImage+EZAdditions.m */; };
+		DD42C0EB438E9AE3F670A713 /* libPods-EZRatingViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B8E52B655C027D33B684EA /* libPods-EZRatingViewDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		75BB2076180636FA00BE8680 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75BB2048180636FA00BE8680 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75BB204F180636FA00BE8680;
+			remoteInfo = EZRatingViewDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00EE30CED36C17F15B5CAB6C /* Pods-EZRatingViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EZRatingViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EZRatingViewDemo/Pods-EZRatingViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		7593196319EFC2B600506F80 /* EZMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZMenuViewController.h; sourceTree = "<group>"; };
+		7593196419EFC2B600506F80 /* EZMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZMenuViewController.m; sourceTree = "<group>"; };
+		7593196819EFC3E000506F80 /* EZOnTheCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZOnTheCellViewController.h; sourceTree = "<group>"; };
+		7593196919EFC3E000506F80 /* EZOnTheCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZOnTheCellViewController.m; sourceTree = "<group>"; };
+		75BB2050180636FA00BE8680 /* EZRatingViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZRatingViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75BB2053180636FA00BE8680 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		75BB2055180636FA00BE8680 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		75BB2057180636FA00BE8680 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		75BB205B180636FA00BE8680 /* EZRatingViewDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EZRatingViewDemo-Info.plist"; sourceTree = "<group>"; };
+		75BB205D180636FA00BE8680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		75BB205F180636FA00BE8680 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		75BB2061180636FA00BE8680 /* EZRatingViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EZRatingViewDemo-Prefix.pch"; sourceTree = "<group>"; };
+		75BB2062180636FA00BE8680 /* EZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZAppDelegate.h; sourceTree = "<group>"; };
+		75BB2063180636FA00BE8680 /* EZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZAppDelegate.m; sourceTree = "<group>"; };
+		75BB2068180636FA00BE8680 /* EZPropertiesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZPropertiesViewController.h; sourceTree = "<group>"; };
+		75BB2069180636FA00BE8680 /* EZPropertiesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZPropertiesViewController.m; sourceTree = "<group>"; };
+		75BB206B180636FA00BE8680 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		75BB2071180636FA00BE8680 /* EZRatingViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EZRatingViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		75BB2072180636FA00BE8680 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		75BB207A180636FA00BE8680 /* EZRatingViewDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EZRatingViewDemoTests-Info.plist"; sourceTree = "<group>"; };
+		75BB207C180636FA00BE8680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		75BB207E180636FA00BE8680 /* EZRatingViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZRatingViewDemoTests.m; sourceTree = "<group>"; };
+		75BB208F18063AC200BE8680 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		84B8E52B655C027D33B684EA /* libPods-EZRatingViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EZRatingViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F0B89D71C1A96E80048660D /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8F0B89DA1C1A9C010048660D /* UIImage+EZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EZAdditions.h"; sourceTree = "<group>"; };
+		8F0B89DB1C1A9C010048660D /* UIImage+EZAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EZAdditions.m"; sourceTree = "<group>"; };
+		9CE19BE6C35902CCB4A00A38 /* Pods-EZRatingViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EZRatingViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-EZRatingViewDemo/Pods-EZRatingViewDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		75BB204D180636FA00BE8680 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75BB209018063AC200BE8680 /* QuartzCore.framework in Frameworks */,
+				75BB2056180636FA00BE8680 /* CoreGraphics.framework in Frameworks */,
+				75BB2058180636FA00BE8680 /* UIKit.framework in Frameworks */,
+				75BB2054180636FA00BE8680 /* Foundation.framework in Frameworks */,
+				DD42C0EB438E9AE3F670A713 /* libPods-EZRatingViewDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75BB206E180636FA00BE8680 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75BB2073180636FA00BE8680 /* XCTest.framework in Frameworks */,
+				75BB2075180636FA00BE8680 /* UIKit.framework in Frameworks */,
+				75BB2074180636FA00BE8680 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7593196619EFC2B900506F80 /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7593196319EFC2B600506F80 /* EZMenuViewController.h */,
+				7593196419EFC2B600506F80 /* EZMenuViewController.m */,
+			);
+			name = MenuViewController;
+			sourceTree = "<group>";
+		};
+		7593196719EFC3C100506F80 /* OnTheCellViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7593196819EFC3E000506F80 /* EZOnTheCellViewController.h */,
+				7593196919EFC3E000506F80 /* EZOnTheCellViewController.m */,
+			);
+			name = OnTheCellViewController;
+			sourceTree = "<group>";
+		};
+		7593196B19EFC42100506F80 /* PropertiesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				75BB2068180636FA00BE8680 /* EZPropertiesViewController.h */,
+				75BB2069180636FA00BE8680 /* EZPropertiesViewController.m */,
+			);
+			name = PropertiesViewController;
+			sourceTree = "<group>";
+		};
+		75BB2047180636FA00BE8680 = {
+			isa = PBXGroup;
+			children = (
+				75BB2059180636FA00BE8680 /* EZRatingViewDemo */,
+				75BB2078180636FA00BE8680 /* EZRatingViewDemoTests */,
+				75BB2052180636FA00BE8680 /* Frameworks */,
+				75BB2051180636FA00BE8680 /* Products */,
+				DD7D1496EFBEBDC955A762E6 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		75BB2051180636FA00BE8680 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75BB2050180636FA00BE8680 /* EZRatingViewDemo.app */,
+				75BB2071180636FA00BE8680 /* EZRatingViewDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75BB2052180636FA00BE8680 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75BB208F18063AC200BE8680 /* QuartzCore.framework */,
+				75BB2053180636FA00BE8680 /* Foundation.framework */,
+				75BB2055180636FA00BE8680 /* CoreGraphics.framework */,
+				75BB2057180636FA00BE8680 /* UIKit.framework */,
+				75BB2072180636FA00BE8680 /* XCTest.framework */,
+				84B8E52B655C027D33B684EA /* libPods-EZRatingViewDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75BB2059180636FA00BE8680 /* EZRatingViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7593196619EFC2B900506F80 /* MenuViewController */,
+				7593196B19EFC42100506F80 /* PropertiesViewController */,
+				7593196719EFC3C100506F80 /* OnTheCellViewController */,
+				75BB2062180636FA00BE8680 /* EZAppDelegate.h */,
+				75BB2063180636FA00BE8680 /* EZAppDelegate.m */,
+				8F0B89DA1C1A9C010048660D /* UIImage+EZAdditions.h */,
+				8F0B89DB1C1A9C010048660D /* UIImage+EZAdditions.m */,
+				75BB206B180636FA00BE8680 /* Images.xcassets */,
+				75BB205A180636FA00BE8680 /* Supporting Files */,
+			);
+			path = EZRatingViewDemo;
+			sourceTree = "<group>";
+		};
+		75BB205A180636FA00BE8680 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F0B89D71C1A96E80048660D /* Launch Screen.storyboard */,
+				75BB205B180636FA00BE8680 /* EZRatingViewDemo-Info.plist */,
+				75BB205C180636FA00BE8680 /* InfoPlist.strings */,
+				75BB205F180636FA00BE8680 /* main.m */,
+				75BB2061180636FA00BE8680 /* EZRatingViewDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		75BB2078180636FA00BE8680 /* EZRatingViewDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				75BB207E180636FA00BE8680 /* EZRatingViewDemoTests.m */,
+				75BB2079180636FA00BE8680 /* Supporting Files */,
+			);
+			path = EZRatingViewDemoTests;
+			sourceTree = "<group>";
+		};
+		75BB2079180636FA00BE8680 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				75BB207A180636FA00BE8680 /* EZRatingViewDemoTests-Info.plist */,
+				75BB207B180636FA00BE8680 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD7D1496EFBEBDC955A762E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00EE30CED36C17F15B5CAB6C /* Pods-EZRatingViewDemo.debug.xcconfig */,
+				9CE19BE6C35902CCB4A00A38 /* Pods-EZRatingViewDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		75BB204F180636FA00BE8680 /* EZRatingViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75BB2082180636FA00BE8680 /* Build configuration list for PBXNativeTarget "EZRatingViewDemo" */;
+			buildPhases = (
+				DFC5F8C9EF60F1E8D74D5ED6 /* [CP] Check Pods Manifest.lock */,
+				75BB204C180636FA00BE8680 /* Sources */,
+				75BB204D180636FA00BE8680 /* Frameworks */,
+				75BB204E180636FA00BE8680 /* Resources */,
+				0D9E062843706448B7E015E4 /* [CP] Embed Pods Frameworks */,
+				87776658EC247C3977B6527A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EZRatingViewDemo;
+			productName = EZRatingViewDemo;
+			productReference = 75BB2050180636FA00BE8680 /* EZRatingViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		75BB2070180636FA00BE8680 /* EZRatingViewDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75BB2085180636FA00BE8680 /* Build configuration list for PBXNativeTarget "EZRatingViewDemoTests" */;
+			buildPhases = (
+				75BB206D180636FA00BE8680 /* Sources */,
+				75BB206E180636FA00BE8680 /* Frameworks */,
+				75BB206F180636FA00BE8680 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				75BB2077180636FA00BE8680 /* PBXTargetDependency */,
+			);
+			name = EZRatingViewDemoTests;
+			productName = EZRatingViewDemoTests;
+			productReference = 75BB2071180636FA00BE8680 /* EZRatingViewDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75BB2048180636FA00BE8680 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = EZ;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = evianzhow;
+				TargetAttributes = {
+					75BB2070180636FA00BE8680 = {
+						TestTargetID = 75BB204F180636FA00BE8680;
+					};
+				};
+			};
+			buildConfigurationList = 75BB204B180636FA00BE8680 /* Build configuration list for PBXProject "EZRatingViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 75BB2047180636FA00BE8680;
+			productRefGroup = 75BB2051180636FA00BE8680 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				75BB204F180636FA00BE8680 /* EZRatingViewDemo */,
+				75BB2070180636FA00BE8680 /* EZRatingViewDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75BB204E180636FA00BE8680 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F0B89D81C1A96E80048660D /* Launch Screen.storyboard in Resources */,
+				75BB206C180636FA00BE8680 /* Images.xcassets in Resources */,
+				75BB205E180636FA00BE8680 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75BB206F180636FA00BE8680 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75BB207D180636FA00BE8680 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D9E062843706448B7E015E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EZRatingViewDemo/Pods-EZRatingViewDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87776658EC247C3977B6527A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EZRatingViewDemo/Pods-EZRatingViewDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFC5F8C9EF60F1E8D74D5ED6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		75BB204C180636FA00BE8680 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F0B89DC1C1A9C010048660D /* UIImage+EZAdditions.m in Sources */,
+				75BB2060180636FA00BE8680 /* main.m in Sources */,
+				7593196A19EFC3E000506F80 /* EZOnTheCellViewController.m in Sources */,
+				75BB206A180636FA00BE8680 /* EZPropertiesViewController.m in Sources */,
+				7593196519EFC2B600506F80 /* EZMenuViewController.m in Sources */,
+				75BB2064180636FA00BE8680 /* EZAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75BB206D180636FA00BE8680 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75BB207F180636FA00BE8680 /* EZRatingViewDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		75BB2077180636FA00BE8680 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75BB204F180636FA00BE8680 /* EZRatingViewDemo */;
+			targetProxy = 75BB2076180636FA00BE8680 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		75BB205C180636FA00BE8680 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75BB205D180636FA00BE8680 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		75BB207B180636FA00BE8680 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75BB207C180636FA00BE8680 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		75BB2080180636FA00BE8680 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		75BB2081180636FA00BE8680 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		75BB2083180636FA00BE8680 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00EE30CED36C17F15B5CAB6C /* Pods-EZRatingViewDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EZRatingViewDemo/EZRatingViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/EZRatingViewDemo/EZRatingViewDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aladdincloud.EZRatingViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		75BB2084180636FA00BE8680 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CE19BE6C35902CCB4A00A38 /* Pods-EZRatingViewDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EZRatingViewDemo/EZRatingViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/EZRatingViewDemo/EZRatingViewDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aladdincloud.EZRatingViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		75BB2086180636FA00BE8680 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EZRatingViewDemo.app/EZRatingViewDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EZRatingViewDemo/EZRatingViewDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EZRatingViewDemoTests/EZRatingViewDemoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akiroom.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		75BB2087180636FA00BE8680 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EZRatingViewDemo.app/EZRatingViewDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EZRatingViewDemo/EZRatingViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "EZRatingViewDemoTests/EZRatingViewDemoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akiroom.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75BB204B180636FA00BE8680 /* Build configuration list for PBXProject "EZRatingViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75BB2080180636FA00BE8680 /* Debug */,
+				75BB2081180636FA00BE8680 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75BB2082180636FA00BE8680 /* Build configuration list for PBXNativeTarget "EZRatingViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75BB2083180636FA00BE8680 /* Debug */,
+				75BB2084180636FA00BE8680 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75BB2085180636FA00BE8680 /* Build configuration list for PBXNativeTarget "EZRatingViewDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75BB2086180636FA00BE8680 /* Debug */,
+				75BB2087180636FA00BE8680 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 75BB2048180636FA00BE8680 /* Project object */;
+}

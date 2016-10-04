@@ -1,0 +1,5 @@
+platform :ios
+
+target 'EZRatingViewDemo' do
+  pod 'EZRatingView', :path => '..'
+end

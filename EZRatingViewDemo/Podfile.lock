@@ -1,0 +1,16 @@
+PODS:
+  - EZRatingView (1.0.4)
+
+DEPENDENCIES:
+  - EZRatingView (from `..`)
+
+EXTERNAL SOURCES:
+  EZRatingView:
+    :path: ".."
+
+SPEC CHECKSUMS:
+  EZRatingView: ed79a51bf40816966725449f8be9149d6ad23fa2
+
+PODFILE CHECKSUM: 78404b8a37b339010da25c380ad47460258ad90f
+
+COCOAPODS: 1.0.1
