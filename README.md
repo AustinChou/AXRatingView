@@ -8,6 +8,20 @@
 
   - 0.x.x -> 1.x.x
     - UIControlEventValueChanged is triggered on control changing (See [#13](https://github.com/akiroom/AXRatingView/pull/13/))
+    
+## Marker Customization Dictionary Settings
+
+|Key|Type|Description|Note|
+|---|---|---|---|
+|EZMarkerMaskCharacterKey|NSString|Normal marker character will be using|Required if no value of `EZMarkerMaskImageKey` present|
+|EZMarkerHighlightCharacterKey|NSString|Highlight marker character will be using, same as `EZMarkerMaskCharacterKey` if not provided|Optional|
+|EZMarkerCharacterFontKey|UIFont|Marker character size will be using, `[UIFont systemFontOfSize:22.0]` will be used if not provided|Optional|
+|EZMarkerMaskImageKey|UIImage|Normal marker image will be using|Required if no value of `EZMarkerMaskCharacterKey` present|
+|EZMarkerHighlightImageKey|UIImage|Highlight marker image will be using, same as `EZMarkerMaskImageKey` if not provided|Optional|
+|EZMarkerBaseColorKey|UIColor|Normal marker color will be using, `[UIColor darkGrayColor]` will be used if not provided|Optional|
+|EZMarkerHighlightColorKey|UIColor|Highlight marker color will be using, `[UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0]` will be used if not provided|Optional|
+
+If both `EZMarkerMaskImageKey` and `EZMarkerMaskCharacterKey` values are provided, `EZMarkerMaskImageKey` will be the first prioritized to use. 
 
 ## About
 Star mark rating view for a review scene.
