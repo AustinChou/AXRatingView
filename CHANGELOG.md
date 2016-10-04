@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-## 1.0.4
+## 2.0.0
 
 - Moved appearance configuration from properties to ```markerDict```.
 - Added ```continuous``` property.

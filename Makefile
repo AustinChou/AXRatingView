@@ -1,8 +1,8 @@
 test:
 	xcodebuild \
 		-sdk iphonesimulator \
-		-workspace AXRatingViewDemo/AXRatingViewDemo.xcworkspace \
-		-scheme AXRatingViewDemo \
+		-workspace EZRatingViewDemo/EZRatingViewDemo.xcworkspace \
+		-scheme EZRatingViewDemo \
 		-configuration Debug \
 		clean build \
 		ONLY_ACTIVE_ARCH=NO \

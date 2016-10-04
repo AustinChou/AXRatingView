@@ -1,11 +1,9 @@
-# AXRatingView
+# EZRatingView
 
-**The project is derivative from the original one, now is maintained by myself. Feature Requests and PR are welcome. **
-
-[![Build Status](https://travis-ci.org/akiroom/AXRatingView.png?branch=master)](https://travis-ci.org/akiroom/AXRatingView)
+**This project is derivative from the original [AXRatingView](https://github.com/akiroom/AXRatingView), which now is maintained by myself. Feature Requests and PR are welcome.**
 
 - __Backward Compatibility Information__
-  - 1.0.3 -> 1.0.4
+  - 2.0.0 -> 1.x.x
     - All the configuration to the slider moved from properties to ```markerDict```
 
   - 0.x.x -> 1.x.x
@@ -27,12 +25,12 @@ Star mark rating view for a review scene.
 ## Screenshots
 ### iOS7
 
-![iOS7 Screenshot](https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot.png)
+![iOS7 Screenshot](https://raw.github.com/EvianZhow/EZRatingView/master/EZRatingViewDemo/Screenshot.png)
 
 ### iOS6
 
-![iOS6 Screenshot](https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot-iOS6.png)
+![iOS6 Screenshot](https://raw.github.com/EvianZhow/EZRatingView/master/EZRatingViewDemo/Screenshot-iOS6.png)
 
 # Development
 
-Using `.clang-format` under AXRatingViewDemo directory to format the code. 
+Using `.clang-format` under EZRatingViewDemo directory to format the code. 
