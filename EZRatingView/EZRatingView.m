@@ -183,7 +183,9 @@ NSString *const EZMarkerHighlightColorKey = @"EZMarkerHighlightColorKey";
     _markerDict = markerDict;
     _highlightImage = nil;
     _maskImage = nil;
+    [_highlightLayer removeFromSuperlayer];
     _highlightLayer = nil;
+    [_maskLayer removeFromSuperlayer];
     _maskLayer = nil;
     [self setNeedsDisplay];
 }
